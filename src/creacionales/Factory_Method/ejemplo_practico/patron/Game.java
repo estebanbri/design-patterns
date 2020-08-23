@@ -1,7 +1,7 @@
-package creacionales.Factory_Method.patron;
+package creacionales.Factory_Method.ejemplo_practico.patron;
 
-import creacionales.Factory_Method.patron.factory.IEnemyFactory;
-import creacionales.Factory_Method.patron.product.IEnemy;
+import creacionales.Factory_Method.ejemplo_practico.patron.factory.IEnemyFactory;
+import creacionales.Factory_Method.ejemplo_practico.patron.product.IEnemy;
 
 public class Game {
 

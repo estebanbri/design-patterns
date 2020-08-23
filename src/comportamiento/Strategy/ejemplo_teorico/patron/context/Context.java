@@ -1,6 +1,6 @@
-package comportamiento.Strategy.patron.context;
+package comportamiento.Strategy.ejemplo_teorico.patron.context;
 
-import comportamiento.Strategy.patron.strategy.IStrategy;
+import comportamiento.Strategy.ejemplo_teorico.patron.strategy.IStrategy;
 
 public class Context {
 

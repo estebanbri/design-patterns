@@ -1,9 +1,9 @@
-package creacionales.Factory_Method;
+package creacionales.Factory_Method.ejemplo_practico;
 
 
-import creacionales.Factory_Method.patron.Game;
-import creacionales.Factory_Method.patron.factory.IEnemyFactory;
-import creacionales.Factory_Method.patron.factory.impl.RandomEnemyFactory;
+import creacionales.Factory_Method.ejemplo_practico.patron.Game;
+import creacionales.Factory_Method.ejemplo_practico.patron.factory.IEnemyFactory;
+import creacionales.Factory_Method.ejemplo_practico.patron.factory.impl.RandomEnemyFactory;
 
 public class Main {
     public static void main(String[] args) {
