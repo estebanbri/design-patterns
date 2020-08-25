@@ -1,7 +1,7 @@
-package estructural.Decorator.ejemplo_practico.patron.decorator.impl;
+package estructural.Decorator.ejemplo_teorico.patron.decorator.impl;
 
-import estructural.Decorator.ejemplo_practico.patron.component.Enemy;
-import estructural.Decorator.ejemplo_practico.patron.decorator.EnemyDecorator;
+import estructural.Decorator.ejemplo_teorico.patron.component.Enemy;
+import estructural.Decorator.ejemplo_teorico.patron.decorator.EnemyDecorator;
 
 public class EnemyDecoratorImpl extends EnemyDecorator {
 

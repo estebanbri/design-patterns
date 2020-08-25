@@ -1,6 +1,6 @@
-package estructural.Decorator.ejemplo_practico.patron.decorator;
+package estructural.Decorator.ejemplo_teorico.patron.decorator;
 
-import estructural.Decorator.ejemplo_practico.patron.component.Enemy;
+import estructural.Decorator.ejemplo_teorico.patron.component.Enemy;
 
 public abstract class EnemyDecorator implements Enemy {
 
