@@ -8,9 +8,11 @@ public class Main {
     public static void main(String[] args) {
 
         Weapon m16 = new M16();
+        System.out.println(m16.attackDamage());
 
         Weapon silencer = new Silencer(m16);
-        silencer.display();
+        //silencer.display();
+        System.out.println(silencer.attackDamage());
 
     }
 }
