@@ -3,30 +3,26 @@ package estructural.Decorator.ejemplo_practico.patron.decorador.impl;
 import estructural.Decorator.ejemplo_practico.patron.componente.Weapon;
 import estructural.Decorator.ejemplo_practico.patron.decorador.WeaponDecorator;
 
-import java.io.*;
-
 public class Silencer extends WeaponDecorator {
 
-    private final int atackDamageReduction = 30;
+    private boolean isActive = true;
+    private static final int ATTACK_REDUCTION = 5;
 
     public Silencer(Weapon weapon) {
         super(weapon);
     }
 
     @Override
-    public int attackDamage() {
-        return super.attackDamage() - atackDamageReduction;
+    public int attack() {
+        return isActive? super.attack() - ATTACK_REDUCTION : super.attack();
     }
 
-    @Override
-    public void display() {
-        super.display();
-        addSilencerBehavior();
+    public boolean isActive() {
+        return isActive;
     }
 
-    private void addSilencerBehavior() {
-        System.out.print(" Silencer Added : ");
-        System.out.print(" { Attack damage : " + this.attackDamage());
-        System.out.print(", Attack damage reduced by: " + atackDamageReduction + "}");
+    public void setActive(boolean active) {
+        isActive = active;
     }
+
 }

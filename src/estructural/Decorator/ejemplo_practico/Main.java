@@ -7,12 +7,20 @@ import estructural.Decorator.ejemplo_practico.patron.decorador.impl.Silencer;
 public class Main {
     public static void main(String[] args) {
 
-        Weapon m16 = new M16();
-        System.out.println(m16.attackDamage());
 
-        Weapon silencer = new Silencer(m16);
-        //silencer.display();
-        System.out.println(silencer.attackDamage());
+        Weapon m16 = new M16(10);
+        System.out.println(m16.attack());
 
+        System.out.println("----");
+
+        Silencer silencerM16 = new Silencer(new M16(20));
+        int attackDmg = silencerM16.attack();
+        System.out.println(attackDmg);
+
+        System.out.println("----");
+
+        silencerM16.setActive(false);
+        int attackDmg2 = silencerM16.attack();
+        System.out.println(attackDmg2);
     }
 }

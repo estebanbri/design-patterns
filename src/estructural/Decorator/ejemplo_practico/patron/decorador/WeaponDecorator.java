@@ -11,12 +11,7 @@ public abstract class WeaponDecorator implements Weapon {
     }
 
     @Override
-    public int attackDamage() {
-        return weapon.attackDamage();
-    }
-
-    @Override
-    public void display() {
-        weapon.display();
+    public int attack() {
+        return weapon.attack();
     }
 }

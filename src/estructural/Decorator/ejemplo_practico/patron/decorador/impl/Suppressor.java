@@ -6,26 +6,23 @@ import estructural.Decorator.ejemplo_practico.patron.decorador.WeaponDecorator;
 
 public class Suppressor extends WeaponDecorator {
 
-    private final int attackDamageReduction = 10;
+    private boolean isActive = true;
+    private static final int ATTACK_REDUCTION = 2;
 
     public Suppressor(Weapon weapon) {
         super(weapon);
     }
 
     @Override
-    public int attackDamage() {
-        return super.attackDamage() - attackDamageReduction;
+    public int attack() {
+        return isActive? super.attack() - ATTACK_REDUCTION : super.attack();
     }
 
-    @Override
-    public void display() {
-        super.display();
-        addSuppresorBehavior();
+    public boolean isActive() {
+        return isActive;
     }
 
-    private void addSuppresorBehavior() {
-        System.out.print("Suppressor added : ");
-        System.out.print(" { Attack damage reduced by: " + attackDamageReduction);
-        System.out.println(" Final attack damage : " + this.attackDamage() + " }");
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

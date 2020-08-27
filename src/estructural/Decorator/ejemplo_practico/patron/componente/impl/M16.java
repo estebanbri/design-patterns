@@ -4,27 +4,14 @@ import estructural.Decorator.ejemplo_practico.patron.componente.Weapon;
 
 public class M16 implements Weapon {
 
-    private int magazineSize;
-    private int attackDmg;
-    private int speed;
+    private int damage;
 
-    public M16() {
-        this.magazineSize = 10;
-        this.attackDmg = 100;
-        this.speed = 10;
+    public M16(int damage) {
+        this.damage = damage;
     }
 
     @Override
-    public int attackDamage() {
-        return attackDmg;
+    public int attack() {
+        return damage;
     }
-
-    @Override
-    public void display()  {
-        System.out.print(" Stock M16 : ");
-        System.out.print(" { Magazine size = " + this.magazineSize);
-        System.out.print(" , Attack damage = " + this.attackDmg);
-        System.out.println(" , Attack speed = " + this.speed + " }");
-    }
-
 }
