@@ -4,18 +4,18 @@ import estructural.Decorator.ejemplo_practico.patron.componente.Weapon;
 import estructural.Decorator.ejemplo_practico.patron.decorador.WeaponDecorator;
 
 
-public class Suppressor extends WeaponDecorator {
+public class Tripode extends WeaponDecorator {
 
     private boolean isActive = true;
-    private static final int ATTACK_REDUCTION = 2;
+    private static final int ATTACK_INCREASE = 33;
 
-    public Suppressor(Weapon weapon) {
+    public Tripode(Weapon weapon) {
         super(weapon);
     }
 
     @Override
     public int attack() {
-        return isActive? super.attack() - ATTACK_REDUCTION : super.attack();
+        return isActive? super.attack() + ATTACK_INCREASE : super.attack();
     }
 
     public boolean isActive() {
