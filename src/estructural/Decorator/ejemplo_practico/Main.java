@@ -15,23 +15,17 @@ public class Main {
 
         System.out.println("---");
 
-        MessageProcessable procesor2 = new EmailSenderMessageDecorator(
-                new MessageProcessor("Hola"));
+        MessageProcessable procesor2 = new EmailSenderMessageDecorator(new MessageProcessor("Hola"));
         procesor2.process();
 
         System.out.println("---");
 
-        MessageProcessable procesor3 = new EmailSenderMessageDecorator(
-                new EncodeMessageDecorator(
-                        new MessageProcessor("Hola")));
+        MessageProcessable procesor3 = new EmailSenderMessageDecorator(new EncodeMessageDecorator(new MessageProcessor("Hola")));
         procesor3.process();
 
         System.out.println("---");
 
-        MessageProcessable procesor4 = new DecodeMessageDecorator(
-                new EmailSenderMessageDecorator(
-                        new EncodeMessageDecorator(
-                                new MessageProcessor("Hola"))));
+        MessageProcessable procesor4 = new DecodeMessageDecorator(new EmailSenderMessageDecorator(new EncodeMessageDecorator(new MessageProcessor("Hola"))));
         procesor4.process();
 
     }
