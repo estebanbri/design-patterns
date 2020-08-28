@@ -1,37 +1,38 @@
 package estructural.Decorator.ejemplo_practico;
 
-import estructural.Decorator.ejemplo_practico.patron.componente.Weapon;
-import estructural.Decorator.ejemplo_practico.patron.componente.impl.M16;
-import estructural.Decorator.ejemplo_practico.patron.decorador.impl.Silencer;
-import estructural.Decorator.ejemplo_practico.patron.decorador.impl.Tripode;
+import estructural.Decorator.ejemplo_practico.patron.componente.MessageProcessable;
+import estructural.Decorator.ejemplo_practico.patron.componente.impl.MessageProcessor;
+import estructural.Decorator.ejemplo_practico.patron.decorador.impl.DecodeMessageDecorator;
+import estructural.Decorator.ejemplo_practico.patron.decorador.impl.EmailSenderMessageDecorator;
+import estructural.Decorator.ejemplo_practico.patron.decorador.impl.EncodeMessageDecorator;
 
 public class Main {
     public static void main(String[] args) {
 
 
-        Weapon m16 = new M16(10);
-        System.out.println("Stock M16 dmg: " + m16.attack());
+        MessageProcessable procesor = new MessageProcessor("Hola");
+        procesor.process();
 
-        System.out.println("----");
+        System.out.println("---");
 
-        Silencer silencerM16 = new Silencer(new M16(20));
-        int attackDmg = silencerM16.attack();
-        System.out.println("Silencer added to M16 dmg: " + attackDmg);
+        MessageProcessable procesor2 = new EmailSenderMessageDecorator(
+                new MessageProcessor("Hola"));
+        procesor2.process();
 
-        silencerM16.setActive(false);
-        int attackDmg2 = silencerM16.attack();
-        System.out.println("Silencer removed to M16 dmg " + attackDmg2);
+        System.out.println("---");
 
-        System.out.println("----");
+        MessageProcessable procesor3 = new EmailSenderMessageDecorator(
+                new EncodeMessageDecorator(
+                        new MessageProcessor("Hola")));
+        procesor3.process();
 
-        Tripode tripodeSilencerM16 = new Tripode(new Silencer(new M16(20)));
-        int attackDmg3 = tripodeSilencerM16.attack();
-        System.out.println("Tripode and silencer added to M16 dmg " + attackDmg3);
+        System.out.println("---");
 
-        tripodeSilencerM16.setActive(false);
-        int attackDmg4 = tripodeSilencerM16.attack();
-        System.out.println("Tripode removed to M16 dmg " + attackDmg4);
-
+        MessageProcessable procesor4 = new DecodeMessageDecorator(
+                new EmailSenderMessageDecorator(
+                        new EncodeMessageDecorator(
+                                new MessageProcessor("Hola"))));
+        procesor4.process();
 
     }
 }
